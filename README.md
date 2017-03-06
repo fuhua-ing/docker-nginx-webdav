@@ -9,8 +9,8 @@
 ```console
 $ docker run --name webdav -p 8080:80 -v /data/webdav/media:/media -v /data/webdav/config/webdav.htpasswd:/etc/nginx/htpasswd -d olopopo/webdav
 ```
-This will start a webdav server listening on the default port of 80.
-Then access it via `http://localhost:8080` or `http://host:8080` in a browser.
+This will start a webdav server listening on the default port of 80 mapped to port 8080 on localhost.
+Then access it via `http://localhost:8080` or `http://host:80` in a browser.
 
 This server will serve files located in your /media folder
 
