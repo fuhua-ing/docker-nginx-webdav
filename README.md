@@ -10,11 +10,7 @@
 $ docker run --name webdav -p 8080:80 -v /data/webdav/media:/media -v /data/webdav/config/webdav.htpasswd:/etc/nginx/htpasswd -d olopopo/docker-nginx-webdav
 ```
 
-In order for nginx to be able to write to /media the permissions must be set for user id 33 on the mapped folder /media:
-
-```console
-$ chown 33:33 /data/webdav/media
-```
+In order for nginx to be able to write to /media the permissions must be set for user id 33 on the mapped folder /media. This is done automatically before starting nginx.
 
 This will start a webdav server listening on the default port of 80 mapped to port 8080 on localhost.
 Then access it via `http://localhost:8080` or `http://host:80` in a browser.
