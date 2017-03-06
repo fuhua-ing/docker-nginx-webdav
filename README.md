@@ -2,7 +2,7 @@
 
 -	[`latest` (*Dockerfile*)](https://github.com/mlorenzo-stratio/docker-nginx-webdav/blob/master/Dockerfile)
 
-[![](https://badge.imagelayers.io/sashgorokhov/webdav:latest.svg)](https://imagelayers.io/?images=sashgorokhov/webdav:latest 'Get your own badge on imagelayers.io')
+[![](https://badge.imagelayers.io/olopopo/docker-nginx-webdav:latest.svg)](https://imagelayers.io/?images=olopopo/docker-nginx-webdav:latest 'Get your own badge on imagelayers.io')
 
 # How to use this image
 
