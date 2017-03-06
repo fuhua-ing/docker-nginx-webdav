@@ -7,23 +7,11 @@
 # How to use this image
 
 ```console
-$ docker run --name webdav -p 80:80 -v /media:/media -d sashgorokhov/webdav
+$ docker run --name webdav -p 8080:80 -v /data/webdav/media:/media -v /data/webdav/config/webdav.htpasswd:/etc/nginx/htpasswd -d olopopo/webdav
 ```
 This will start a webdav server listening on the default port of 80.
-Then access it via `http://localhost:80` or `http://host:80` in a browser.
+Then access it via `http://localhost:8080` or `http://host:8080` in a browser.
 
 This server will serve files located in your /media folder
 
-Image's supported volumes:
-- `/media` - served directory
-
-To restrict access to only authorized users, you can define two environment variables: `USERNAME` and `PASSWORD`
-```console
-$ docker run --name webdav -p 80:80 -v /media:/media -e USERNAME=webdav -e PASSWORD=webdav -d sashgorokhov/webdav
-```
-
-# Supported Docker versions
-
-This image is officially supported on Docker version 1.10.2.
-Support for older versions (down to 1.6) is provided on a best-effort basis.
-Please see [the Docker installation documentation](https://docs.docker.com/installation/) for details on how to upgrade your Docker daemon.
+To restrict access to only authorized users, you can create an htpasswd file on this site https://www.transip.nl/htpasswd/ 
