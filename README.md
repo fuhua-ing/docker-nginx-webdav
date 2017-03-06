@@ -7,11 +7,18 @@
 # How to use this image
 
 ```console
-$ docker run --name webdav -p 8080:80 -v /data/webdav/media:/media -v /data/webdav/config/webdav.htpasswd:/etc/nginx/htpasswd -d olopopo/webdav
+$ docker run --name webdav -p 8080:80 -v /data/webdav/media:/media -v /data/webdav/config/webdav.htpasswd:/etc/nginx/htpasswd -d olopopo/docker-nginx-webdav
 ```
+
+In order for nginx to be able to write to /media the permissions must be set for user id 33 on the mapped folder /media:
+
+```console
+$ chown 33:33 /data/webdav/media
+```
+
 This will start a webdav server listening on the default port of 80 mapped to port 8080 on localhost.
 Then access it via `http://localhost:8080` or `http://host:80` in a browser.
 
-This server will serve files located in your /media folder
+It will serve files located in your /media folder
 
 To restrict access to only authorized users, you can create an htpasswd file on this site https://www.transip.nl/htpasswd/ 
