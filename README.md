@@ -17,4 +17,6 @@ Then access it via `http://localhost:8080` or `http://host:80` in a browser.
 
 It will serve files located in your /media folder
 
-PUT and DELETE methods will be restricted only to the host specified in WRITE_HOST variable
+PUT, DELETE, MKCOL, COPY, MOVE and PUT methods will be restricted only to the host specified in WRITE_HOST variable
+
+Localtime can be set by specifying LOCALZONE="Europe/Madrid" for instance
