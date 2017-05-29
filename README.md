@@ -7,7 +7,7 @@
 # How to use this image
 
 ```console
-$ docker run --name webdav -p 8080:80 -v /data/webdav/media:/media -v /data/webdav/config/webdav.htpasswd:/etc/nginx/htpasswd -d olopopo/docker-nginx-webdav
+$ docker run --name webdav -p 8080:80 -v /data/webdav/media:/media -v /data/webdav/config/default.conf:/etc/nginx/conf.d/default.conf -d olopopo/docker-nginx-webdav
 ```
 
 In order for nginx to be able to write to /media the permissions must be set for user id 33 on the mapped folder /media. This is done automatically before starting nginx.
@@ -17,4 +17,4 @@ Then access it via `http://localhost:8080` or `http://host:80` in a browser.
 
 It will serve files located in your /media folder
 
-To restrict access to only authorized users, you can create an htpasswd file on this site https://www.transip.nl/htpasswd/ 
+PUT and DELETE methods will be restricted only to the host specified in WRITE_HOST variable
