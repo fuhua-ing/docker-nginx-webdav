@@ -20,3 +20,11 @@ It will serve files located in your /media folder
 PUT, DELETE, MKCOL, COPY, MOVE and PUT methods will be restricted only to the host specified in WRITE_HOST variable
 
 Localtime can be set by specifying LOCALZONE="Europe/Madrid" for instance
+
+
+
+Copy as above;
+
+use directly
+
+docker run --name webdav -p 8080:80 -v /data/webdav/media:/media  -d ccr.ccs.tencentyun.com/gezhiwei8899/nginx-webdav
